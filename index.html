@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rise 360 AI Features Guide - Canada Life L&D</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #E0032B 0%, #c8022a 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .tagline {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* Navigation Styles */
+        nav {
+            background: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .nav-list {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .nav-list a {
+            color: #E0032B;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-list a:hover {
+            background-color: #E0032B;
+            color: white;
+        }
+        
+        /* Main Content Styles */
+        main {
+            padding: 3rem 0;
+        }
+        
+        .intro-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .intro-section h1 {
+            color: #E0032B;
+            margin-bottom: 1rem;
+            font-size: 2.2rem;
+        }
+        
+        .disclaimer {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 5px;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+        }
+        
+        /* AI Features Section */
+        .ai-features-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .ai-features-section h2 {
+            color: #E0032B;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .feature-item {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            background: #fafafa;
+        }
+        
+        .feature-item h3 {
+            color: #E0032B;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .feature-description {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+        
+        .how-to-use {
+            background: #f0f8ff;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+        
+        .how-to-use h4 {
+            color: #E0032B;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .what-to-expect {
+            background: #f0f9f0;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+        
+        .what-to-expect h4 {
+            color: #28a745;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .compliance-note {
+            background: #fff5f5;
+            border: 1px solid #feb2b2;
+            border-radius: 5px;
+            padding: 0.75rem;
+            font-size: 0.85rem;
+            color: #c53030;
+        }
+        
+        /* Role Section Styles */
+        .role-section {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+        
+        .role-header {
+            background: #E0032B;
+            color: white;
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.3rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        .role-header:hover {
+            background: #c8022a;
+        }
+        
+        .role-header::after {
+            content: "▼";
+            transition: transform 0.3s ease;
+        }
+        
+        .role-header.collapsed::after {
+            transform: rotate(-90deg);
+        }
+        
+        .role-content {
+            padding: 2rem;
+            display: block;
+        }
+        
+        .role-content.hidden {
+            display: none;
+        }
+        
+        .use-case {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .use-case h4 {
+            color: #E0032B;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .use-case-steps {
+            list-style: none;
+            counter-reset: step-counter;
+        }
+        
+        .use-case-steps li {
+            counter-increment: step-counter;
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .use-case-steps li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #E0032B;
+            color: white;
+            width: 1.2rem;
+            height: 1.2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+        
+        .highlight-box {
+            background: #e8f4f8;
+            border-left: 4px solid #E0032B;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        /* Footer Styles */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .credentials {
+            font-weight: bold;
+            color: #E0032B;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                text-align: center;
+            }
+            
+            .nav-list {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .intro-section h1 {
+                font-size: 1.8rem;
+            }
+            
+            .logo {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Canada Life L&D</div>
+                <div class="tagline">Rise 360 AI Features Reference Guide</div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#ai-features">AI Features</a></li>
+                <li><a href="#instructional-designers">Instructional Designers</a></li>
+                <li><a href="#facilitators">Facilitators</a></li>
+                <li><a href="#best-practices">Best Practices</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <section id="overview" class="intro-section">
+                <h1>Rise 360 AI Features Reference Guide</h1>
+                <p>This guide explains the AI features available in Rise 360 and how Canada Life L&D professionals can use them safely and effectively. Each feature is explained with clear instructions on what it does, how to use it, and what to expect.</p>
+                
+                <div class="disclaimer">
+                    <strong>⚠️ Important:</strong> All examples are illustrative. Verify all Rise 360 AI outputs for compliance before publishing.
+                </div>
+            </section>
+
+            <section id="ai-features" class="ai-features-section">
+                <h2>🔧 Rise 360 AI Features</h2>
+                <p>These are the actual AI features you'll find in the Rise 360 interface and what they can do for you.</p>
+                
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <h3>📝 Text Enhancement</h3>
+                        <div class="feature-description">
+                            Improves existing text blocks for grammar, readability, and tone without changing the core content.
+                        </div>
+                        <div class="how-to-use">
+                            <h4>How to Use:</h4>
+                            <p>Select any text block in Rise 360 → Click the AI button → Choose enhancement options (grammar, tone, readability)</p>
+                        </div>
+                        <div class="what-to-expect">
+                            <h4>What to Expect:</h4>
+                            <p>Minor wording improvements, better sentence structure, tone adjustments (formal ↔ conversational)</p>
+                        </div>
+                        <div class="compliance-note">
+                            Always review changes to ensure they don't alter meaning or compliance requirements.
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <h3>🖼️ AI Image Generation</h3>
+                        <div class="feature-description">
+                            Creates simple, generic images based on text descriptions for course illustrations.
+                        </div>
+                        <div class="how-to-use">
+                            <h4>How to Use:</h4>
+                            <p>Add image block → Select AI image option → Type description → Choose from generated options</p>
+                        </div>
+                        <div class="what-to-expect">
+                            <h4>What to Expect:</h4>
+                            <p>Basic business imagery, generic office scenes, simple illustrations. Quality varies.</p>
+                        </div>
+                        <div class="compliance-note">
+                            Use only for generic concepts. Replace with branded assets for final courses.
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <h3>❓ Quiz Question Assistance</h3>
+                        <div class="feature-description">
+                            Helps format and refine quiz questions you've written, improving clarity and structure.
+                        </div>
+                        <div class="how-to-use">
+                            <h4>How to Use:</h4>
+                            <p>Create quiz block → Write your question → Use AI to improve wording or suggest formats</p>
+                        </div>
+                        <div class="what-to-expect">
+                            <h4>What to Expect:</h4>
+                            <p>Better question clarity, improved answer options formatting, grammar corrections</p>
+                        </div>
+                        <div class="compliance-note">
+                            AI cannot create insurance-specific questions. You write content, AI helps format.
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <h3>📋 Block Organization</h3>
+                        <div class="feature-description">
+                            Suggests ways to arrange and structure content blocks for better learning flow.
+                        </div>
+                        <div class="how-to-use">
+                            <h4>How to Use:</h4>
+                            <p>In course view → Select multiple blocks → Ask AI for organization suggestions</p>
+                        </div>
+                        <div class="what-to-expect">
+                            <h4>What to Expect:</h4>
+                            <p>Layout suggestions, spacing recommendations, logical flow improvements</p>
+                        </div>
+                        <div class="compliance-note">
+                            Review all organizational changes to ensure they support your learning objectives.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="instructional-designers" class="role-section">
+                <div class="role-header" onclick="toggleSection('id-content')">
+                    🎯 For Instructional Designers
+                </div>
+                <div id="id-content" class="role-content">
+                    <p><strong>How you can use Rise 360 AI features in your daily work:</strong></p>
+
+                    <div class="use-case">
+                        <h4>Polishing Draft Content</h4>
+                        <ol class="use-case-steps">
+                            <li>Write your course content using approved sources</li>
+                            <li>Use text enhancement to improve readability</li>
+                            <li>Review AI suggestions carefully</li>
+                            <li>Apply changes that maintain accuracy</li>
+                            <li>Continue with normal review process</li>
+                        </ol>
+                    </div>
+
+                    <div class="use-case">
+                        <h4>Creating Visual Placeholders</h4>
+                        <ol class="use-case-steps">
+                            <li>Identify where images would help learning</li>
+                            <li>Use AI image generation for generic concepts</li>
+                            <li>Select appropriate placeholder images</li>
+                            <li>Replace with branded assets during final production</li>
+                            <li>Ensure all images support learning objectives</li>
+                        </ol>
+                    </div>
+
+                    <div class="use-case">
+                        <h4>Improving Assessment Questions</h4>
+                        <ol class="use-case-steps">
+                            <li>Write quiz questions based on approved content</li>
+                            <li>Use AI assistance to improve clarity</li>
+                            <li>Review suggestions for accuracy</li>
+                            <li>Test questions with subject matter experts</li>
+                            <li>Validate against learning objectives</li>
+                        </ol>
+                    </div>
+
+                    <div class="highlight-box">
+                        <strong>Key Point:</strong> AI features help polish and organize your expert content, but cannot replace your instructional design knowledge or create compliant insurance content.
+                    </div>
+                </div>
+            </section>
+
+            <section id="facilitators" class="role-section">
+                <div class="role-header" onclick="toggleSection('fac-content')">
+                    🎤 For Facilitators
+                </div>
+                <div id="fac-content" class="role-content">
+                    <p><strong>How Rise 360 AI features can support your training delivery:</strong></p>
+
+                    <div class="use-case">
+                        <h4>Enhancing Presentation Materials</h4>
+                        <ol class="use-case-steps">
+                            <li>Create your training content</li>
+                            <li>Use text enhancement for clearer handouts</li>
+                            <li>Add AI-generated images for generic concepts</li>
+                            <li>Organize blocks for better visual flow</li>
+                            <li>Review final materials for training effectiveness</li>
+                        </ol>
+                    </div>
+
+                    <div class="use-case">
+                        <h4>Creating Activity Instructions</h4>
+                        <ol class="use-case-steps">
+                            <li>Write activity steps and instructions</li>
+                            <li>Use AI to improve clarity and readability</li>
+                            <li>Organize instructions in logical sequence</li>
+                            <li>Test instructions with sample participants</li>
+                            <li>Refine based on facilitation experience</li>
+                        </ol>
+                    </div>
+
+                    <div class="use-case">
+                        <h4>Improving Course Materials</h4>
+                        <ol class="use-case-steps">
+                            <li>Prepare all training materials</li>
+                            <li>Use AI to enhance text readability</li>
+                            <li>Add visual elements where helpful</li>
+                            <li>Organize content for smooth delivery</li>
+                            <li>Practice with enhanced materials</li>
+                        </ol>
+                    </div>
+
+                    <div class="highlight-box">
+                        <strong>Key Point:</strong> AI can help make your materials more professional and readable, but your facilitation expertise remains essential for successful training delivery.
+                    </div>
+                </div>
+            </section>
+
+            <section id="best-practices" class="role-section">
+                <div class="role-header" onclick="toggleSection('bp-content')">
+                    📋 Best Practices & Compliance
+                </div>
+                <div id="bp-content" class="role-content">
+                    <h3>🔒 Compliance Guidelines</h3>
+                    <ul style="margin-bottom: 2rem; padding-left: 2rem;">
+                        <li><strong>Content Control:</strong> Never input sensitive company or client information</li>
+                        <li><strong>Human Review:</strong> Always review AI suggestions before accepting</li>
+                        <li><strong>Standard Process:</strong> AI-enhanced content still requires normal approval workflows</li>
+                        <li><strong>Accuracy First:</strong> Verify that AI changes don't alter important meanings</li>
+                    </ul>
+
+                    <h3>✅ Effective Usage Tips</h3>
+                    <ul style="margin-bottom: 2rem; padding-left: 2rem;">
+                        <li><strong>Start Simple:</strong> Try AI features on low-risk content first</li>
+                        <li><strong>Be Specific:</strong> Give clear descriptions for image generation</li>
+                        <li><strong>Compare Before/After:</strong> Always check what AI changed</li>
+                        <li><strong>Save Originals:</strong> Keep copies before applying AI suggestions</li>
+                    </ul>
+
+                    <h3>⚠️ Limitations to Remember</h3>
+                    <ul style="padding-left: 2rem;">
+                        <li><strong>No Industry Expertise:</strong> AI doesn't understand insurance regulations</li>
+                        <li><strong>Generic Output:</strong> AI creates general content, not specialized material</li>
+                        <li><strong>Quality Varies:</strong> AI suggestions may not always be improvements</li>
+                        <li><strong>Your Judgment:</strong> You decide what works for your specific needs</li>
+                    </ul>
+
+                    <div class="highlight-box">
+                        <strong>Bottom Line:</strong> Use Rise 360 AI features as helpful tools, but maintain your professional standards and compliance responsibilities at all times.
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>© 2025 Canada Life Learning & Development</div>
+                <div class="credentials">Muhammad Hanif — LLM Engineer & AI L&D Professional</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleSection(contentId) {
+            const content = document.getElementById(contentId);
+            const header = content.previousElementSibling;
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                header.classList.remove('collapsed');
+            } else {
+                content.classList.add('hidden');
+                header.classList.add('collapsed');
+            }
+        }
+
+        // Initialize with all sections collapsed except AI Features
+        document.addEventListener('DOMContentLoaded', function() {
+            const roleContents = document.querySelectorAll('#instructional-designers .role-content, #facilitators .role-content, #best-practices .role-content');
+            const roleHeaders = document.querySelectorAll('#instructional-designers .role-header, #facilitators .role-header, #best-practices .role-header');
+            
+            roleContents.forEach(content => content.classList.add('hidden'));
+            roleHeaders.forEach(header => header.classList.add('collapsed'));
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
